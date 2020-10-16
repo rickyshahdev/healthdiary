@@ -10,7 +10,7 @@ if($_REQUEST['action'] === 'index'){
   $request_body = file_get_contents('php://input'); //get the request body
   $body_object = json_decode($request_body);
 
-  $new_event = new EVENT(null, $body_object->title, $body_object->date,$body_object->description);
+  $new_event = new EVENT(null, $body_object->title, $body_object->date,$body_object->description, $body_object->image);
 
   $all_event = Diary::create($new_event);
   echo json_encode($all_event);
@@ -19,7 +19,7 @@ if($_REQUEST['action'] === 'index'){
 }else if ($_REQUEST['action'] === 'update') {
   $request_body = file_get_contents('php://input');
   $body_object = json_decode($request_body);
-  $updated_event = new Event($_REQUEST['id'], $body_object->title, $body_object->date, $body_object->description);
+  $updated_event = new Event($_REQUEST['id'], $body_object->title, $body_object->date, $body_object->description, $body_object->image);
   $all_event = Diary::update($updated_event);
   echo json_encode($all_event);
 
