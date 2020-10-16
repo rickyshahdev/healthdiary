@@ -7,12 +7,14 @@ class Event {
     public $title;
     public $date;
     public $description;
+    public $image;
 
-    public function __construct($id, $title, $date, $description ){
+    public function __construct($id, $title, $date, $description, $image ){
         $this->id = $id;
         $this->title = $title;
         $this->date = $date;
         $this->description = $description;
+        $this->image = $image;
 
     }
 }
@@ -21,9 +23,9 @@ Class Diary {
 
   ///// CREATE ROUTE //////////
   static function create($diary) {
-    $query = "INSERT INTO healthdir(title, date, description) VALUES ($1, $2, $3)";
+    $query = "INSERT INTO healthdir(title, date, description, image) VALUES ($1, $2, $3, $4)";
 
-    pg_query_params($query, [$diary->title, $diary->date,$diary->description]);
+    pg_query_params($query, [$diary->title, $diary->date,$diary->description, $diary->image]);
     return self::all();
   }
   /////////// GET ROUTE ////////////
@@ -39,7 +41,8 @@ Class Diary {
                $row_object->id,
                $row_object->title,
                $row_object->date,
-               $row_object->description
+               $row_object->description,
+               $row_object->image
              );
 
            $diary[] = $new_event;
@@ -50,8 +53,8 @@ Class Diary {
      //////////// EDIT ROUTE //////////
 
    static function update($updated_event){
-     $query = "UPDATE healthdir SET title = $1, date = $2 , description = $3 WHERE id = $4";
-     $query_params = array($updated_event->title, $updated_event->date, $updated_event->description, $updated_event->id);
+     $query = "UPDATE healthdir SET title = $1, date = $2 , description = $3, $image = $4 WHERE id = $5";
+     $query_params = array($updated_event->title, $updated_event->date, $updated_event->description, $updated_event->image, $updated_event->id);
      pg_query_params($query, $query_params);
      return self::all();
      }
