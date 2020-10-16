@@ -1,8 +1,8 @@
 <?php
 
 $dbconn = null;
-if(getenv('postgres://pwzmjcukwzfunw:755b67d7f1f50a335ddf034024df454f2d408f8bba7822c7021eb6430e5ec9da@ec2-3-220-222-72.compute-1.amazonaws.com:5432/d5uajp53q46lt7')){ // if using the heroku database
-	$connectionConfig = parse_url(getenv('postgres://pwzmjcukwzfunw:755b67d7f1f50a335ddf034024df454f2d408f8bba7822c7021eb6430e5ec9da@ec2-3-220-222-72.compute-1.amazonaws.com:5432/d5uajp53q46lt7'));
+if(getenv('DATABASE_URL')){ // if using the heroku database
+	$connectionConfig = parse_url(getenv('DATABASE_URL'));
 	$host = $connectionConfig['host'];
 	$user = $connectionConfig['user'];
 	$password = $connectionConfig['pass'];
