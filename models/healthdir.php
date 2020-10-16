@@ -20,6 +20,7 @@ if(getenv('DATABASE_URL')){ // if using the heroku database
 }
 
 
+
 class Event {
     public $id;
     public $title;
