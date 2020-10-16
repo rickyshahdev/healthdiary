@@ -43,7 +43,7 @@ createEvent = (event) => {
       title: this.state.newEventTitle,
       date: this.state.newEventDate,
       description: this.state.newEventDescription,
-      image: this.state.newEventimage
+      image: this.state.newEventImage
     }).then(
       (response) => {
           this.setState({
