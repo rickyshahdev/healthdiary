@@ -79,6 +79,7 @@ class App extends React.Component {
 
   updatePost = (event) => {
     event.preventDefault();
+
     const id = event.target.getAttribute('id');
     axios.put(
       '/healthdir/' + id,
@@ -135,19 +136,20 @@ class App extends React.Component {
                       <h5>Date: {entry.date}</h5>
                       <h5>Description: {entry.description}</h5>
                     </div>
-                    <div>
+                    <details>
+                    <summary>Edit Event</summary>
                       <form id={entry.id} onSubmit={this.updatePost}>
                          <input onKeyUp={this.changeUpdateTitle} type="text" placeholder="New Title"/>
                          <br/>
                          <input onKeyUp={this.changeUpdateDate} type="date"/>
                          <br/>
-                         <input onKeyUp={this.changeUpdateImage} type='tex'/>
+                         <input onKeyUp={this.changeUpdateImage} type='text'/>
                          <br/>
                          <input onKeyUp={this.changeUpdateDescription} type="textarea" placeholder="Description"/>
                          <br/>
                         <input type="submit" value="Update Entry"/>
                       </form>
-                    </div>
+                    </details>
                   </div>
                   <br/>
                   <button value={entry.id} onClick={this.deletePost}>Delete Entry</button>

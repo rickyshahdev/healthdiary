@@ -72,7 +72,7 @@ Class Diary {
      //////////// EDIT ROUTE //////////
 
    static function update($updated_event){
-     $query = "UPDATE healthdir SET title = $1, date = $2 , description = $3, $image = $4 WHERE id = $5";
+     $query = "UPDATE healthdir SET title = $1, date = $2 , description = $3, image = $4 WHERE id = $5";
      $query_params = array($updated_event->title, $updated_event->date, $updated_event->description, $updated_event->image, $updated_event->id);
      pg_query_params($query, $query_params);
      return self::all();
