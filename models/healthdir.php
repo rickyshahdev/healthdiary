@@ -16,7 +16,7 @@ if(getenv('postgres://pwzmjcukwzfunw:755b67d7f1f50a335ddf034024df454f2d408f8bba7
 		"dbname=".$dbname
 	);
 } else { // if using the local database, change the dbname to be whatever your local database's name is
-	$dbconn = pg_connect("host=localhost dbname=healthdiary");
+	$dbconn = pg_connect("host=localhost dbname=healthdiary user=postgres password=Custom13");
 }
 
 

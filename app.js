@@ -18,7 +18,7 @@ class App extends React.Component {
     this.setState({
         newEventTitle:event.target.value
     })
-}
+  }
 
 changeEventDate = (event) => {
     this.setState({
