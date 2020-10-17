@@ -128,7 +128,7 @@ class App extends React.Component {
             {
               this.state.diary.map(
                 (entry) => {
-                  return <li key={entry.id}>
+                  return <li className="nav"key={entry.id}>
                   <img className= "img"  src={entry.image} alt={entry.title}/>
                   <div>
                     <div>
