@@ -51,7 +51,7 @@ Class Diary {
   static function all(){
        $diary = array();
 
-       $results = pg_query("SELECT * FROM healthdir");
+       $results = pg_query("SELECT * FROM healthdir ORDER BY id ASC" );
        $row_object = pg_fetch_object($results);
 
        while($row_object !== false){

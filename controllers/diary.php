@@ -3,10 +3,12 @@ header('Content-Type: application/json');
 include_once __DIR__ . '/../models/healthdir.php';
 
       /////////// GET ROUTE ////////////
+
 if($_REQUEST['action'] === 'index'){
     echo json_encode(Diary::all());
   ///// CREATE ROUTE //////////
-} else if ($_REQUEST['action'] === 'create'){
+}
+else if ($_REQUEST['action'] === 'create'){
   $request_body = file_get_contents('php://input'); //get the request body
   $body_object = json_decode($request_body);
 
