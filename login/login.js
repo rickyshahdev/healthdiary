@@ -13,7 +13,7 @@ class Login extends React.Component{
 render = () => {
   return(
     <div>
-    <form onSubmit={this.getPeople} >
+    <form onSubmit={this.getPeople} action="/diary/index.html" method="POST">
       <input type="text" placeholder="username"/><br/>
       <input type="text" placeholder="password"/><br/>
       <input type="submit" value="Sign In"/>
