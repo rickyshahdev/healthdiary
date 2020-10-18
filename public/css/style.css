@@ -14,6 +14,11 @@ h1{
   margin-left: 8%;
 }
 
+h3{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 ul{
   display: flex;
   flex-direction: column;
@@ -55,18 +60,25 @@ input:hover{
   border-image: initial;
 }
 
-input[type='submit']{
+button, input[type='submit']{
   height: 35px;
   background: whitesmoke;
   box-shadow: 2px 2px black;
   font-family: sans-serif;
 }
 
-input[type='submit']:hover{
+button:hover, input[type='submit']:hover{
   cursor: pointer;
   box-shadow: none;
   font-family: sans-serif;
+}
+
+input[type='submit']:hover{
   background-color: rgb(87, 202, 195);
+}
+
+button:hover{
+  background-color: red;
 }
 
 textarea{
@@ -96,6 +108,16 @@ textarea:hover{
   border-image: initial;
 }
 
+summary{
+  font-size: 0.8em;
+}
+
+summary:hover{
+  cursor: pointer;
+  color: rgb(87, 202, 195);
+  text-shadow: 1px 1px black;
+}
+
 .newEvent{
   width: 60%;
   display: flex;
@@ -117,8 +139,8 @@ textarea:hover{
 
 .eventCard{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   width: 500px;
   margin-top: 2%;
   margin-bottom: 2%;
@@ -132,10 +154,26 @@ textarea:hover{
   box-shadow: 2px 2px 4px black;
 }
 
+.left{
+  width: 35%;
+  padding: 2%;
+}
+
+.right{
+  width: 55%;
+  height: 90%;
+  padding-right: 1%;
+}
+
 .navList{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.descTitle{
+  margin-top: 50px;
+  margin-bottom: 0;
 }
 
 .navItem{
@@ -174,8 +212,24 @@ textarea:hover{
 
 }
 
+.description{
+  margin-top: 3px;
+  margin-bottom: 30px;
+}
+
+.eventTitle{
+  display: flex;
+  justify-content: space-between;
+}
+
+.date{
+  opacity: 0.5;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
 .img{
-  width:200px;
+  width: 200px;
   height: 200px;
 }
 
