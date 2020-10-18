@@ -111,24 +111,24 @@ class App extends React.Component {
 
   render = () => {
       return <div>
-        <div className='new-event'>
-          <h2>Add Event</h2>
+        <div className='newEvent'>
+          <h2 className='newEventTitle'>Add Event</h2>
           <form onSubmit={this.createEvent}>
             <input onKeyUp={this.changeEventTitle} type="text" placeholder="Title"/><br/>
             <input onKeyUp={this.changeEventDate} type="date"/><br/>
-            <input onKeyUp={this.changeEventImage} type="text" placeholder="image link"/><br/>
-            <input onKeyUp={this.changeEventDescription} type="textarea" placeholder="Description"/><br/>
+            <input onKeyUp={this.changeEventImage} type="text" placeholder="Image Link"/><br/>
+            <textarea onKeyUp={this.changeEventDescription}  placeholder="Description"/><br/>
 
             <input type="submit" value="Add Event"/>
           </form>
         </div>
-        <div className='list-events'>
-          <h2> List of Events </h2>
+        <div className='eventsDiv'>
+          <h2 className="eventsTitle"> List of Events </h2>
           <ul>
             {
               this.state.diary.map(
                 (entry) => {
-                  return <li key={entry.id}>
+                  return <li className= "eventCard" key={entry.id} >
                   <img className= "img"  src={entry.image} alt={entry.title}/>
                   <div>
                     <div>
