@@ -22,4 +22,4 @@ RewriteCond %{REQUEST_METHOD} ^DELETE$
 RewriteRule ^users/([0-9]+)$ controllers/users.php?action=delete&id=$1
 
 RewriteCond %{REQUEST_METHOD} ^GET$
-RewriteRule ^new$ controllers/login.php?action=index
+RewriteRule ^new$ controllers/users.php?action=index

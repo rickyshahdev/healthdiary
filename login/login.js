@@ -2,9 +2,26 @@ class Login extends React.Component{
   state ={
     people: []
   }
-  getPeople = () => {
-    console.log(this.state);
+  // componentDidMount = () => {
+  //     axios.get('/users').then(
+  //       (response) => {
+  //        this.setState ({
+  //          people: response.data
+  //        })
+  //     })
+  //   }
+  changeUserName = (event) => {
+  this.setState ({
+    newUserName: event.target.value
+  })
+}
 
+   changePassword = (event) => {
+       this.setState({
+           newPassword:event.target.value
+       })
+   }
+  getPeople = () => {
     axios.get('/users').then((response) => {
         this.setState({
         people: response.data
@@ -15,15 +32,24 @@ class Login extends React.Component{
 render = () => {
   return(
     <div>
-    <form action="/diary/index.html" onSubmit={this.getPeople} method="POST">
-      <input type="text" placeholder="username"/><br/>
-      <input type="text" placeholder="password"/><br/>
-      <input type="submit" value="Sign In"/>
-    </form>
-    </div>
-  )
-}
+    <ul>
+         {
+         this.state.people.map(
+             (person) => {
+               return
+             }
+         )
+         }
+          </ul>
+         <form action="/diary/index.html"onSubmit={this.getPeople}>
+           <input onKeyUp={this.changeUserName} type="text" required={true} placeholder="username"/><br/>
+           <input onKeyUp={this.changePassword} required={true} type="text"placeholder="password"/><br/>
+           <input type="submit" value="Log In"/>
+         </form>
 
+   </div>
+      )
+    }
 }
 
 ReactDOM.render(
