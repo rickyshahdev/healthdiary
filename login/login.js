@@ -4,7 +4,7 @@ class Login extends React.Component{
   }
   getPeople = () => {
     console.log(this.state);
-    
+
     axios.get('/users').then((response) => {
         this.setState({
         people: response.data
@@ -15,7 +15,7 @@ class Login extends React.Component{
 render = () => {
   return(
     <div>
-    <form onSubmit={this.getPeople} method="POST">
+    <form action="/diary/index.html" onSubmit={this.getPeople} method="POST">
       <input type="text" placeholder="username"/><br/>
       <input type="text" placeholder="password"/><br/>
       <input type="submit" value="Sign In"/>
