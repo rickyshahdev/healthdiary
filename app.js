@@ -119,7 +119,7 @@ class App extends React.Component {
             <input onKeyUp={this.changeEventImage} type="text" placeholder="Image Link"/><br/>
             <textarea onKeyUp={this.changeEventDescription}  placeholder="Description"/><br/>
 
-            <input type="submit" value="Add Event"/>
+            <input type="submit" value="ADD EVENT"/>
           </form>
         </div>
         <div className='eventsDiv'>
@@ -129,15 +129,17 @@ class App extends React.Component {
               this.state.diary.map(
                 (entry) => {
                   return <li className= "eventCard" key={entry.id} >
-                  <img className= "img"  src={entry.image} alt={entry.title}/>
-                  <div>
+                  <div className='left'>
+                    <img className= "img"  src={entry.image} alt={entry.title}/>
+                  </div>
+                  <div className='right'>
                     <div>
-                      <h5>Title: {entry.title}</h5>
-                      <h5>Date: {entry.date}</h5>
-                      <h5>Description: {entry.description}</h5>
+                      <div className='eventTitle'><h3>{entry.title}</h3><h4 className='date'>{entry.date}</h4></div>
+                      <h4 className='descTitle'>Description:</h4>
+                      <p className='description'>{entry.description}</p>
                     </div>
                     <details>
-                    <summary>Edit Event</summary>
+                    <summary>EDIT EVENT</summary>
                       <form id={entry.id} onSubmit={this.updatePost}>
                          <input onKeyUp={this.changeUpdateTitle} type="text" placeholder="New Title"/>
                          <br/>
@@ -147,12 +149,12 @@ class App extends React.Component {
                          <br/>
                          <input onKeyUp={this.changeUpdateDescription} type="textarea" placeholder="Description"/>
                          <br/>
-                        <input type="submit" value="Update Entry"/>
+                        <input type="submit" value="UPDATE ENTRY"/>
                       </form>
+                      <br/>
+                      <button value={entry.id} onClick={this.deletePost}>DELETE EVENT</button>
                     </details>
                   </div>
-                  <br/>
-                  <button value={entry.id} onClick={this.deletePost}>Delete Entry</button>
                   </li>
                 }
               )
