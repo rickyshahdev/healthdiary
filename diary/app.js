@@ -111,35 +111,33 @@ class App extends React.Component {
 
   render = () => {
       return <div>
-        <div className='newEvent'>
-          <h2 className='newEventTitle'>Add Event</h2>
+        <div className='new-event'>
+          <h2>Add Event</h2>
           <form onSubmit={this.createEvent}>
             <input onKeyUp={this.changeEventTitle} type="text" placeholder="Title"/><br/>
             <input onKeyUp={this.changeEventDate} type="date"/><br/>
-            <input onKeyUp={this.changeEventImage} type="text" placeholder="Image Link"/><br/>
-            <textarea onKeyUp={this.changeEventDescription}  placeholder="Description"/><br/>
+            <input onKeyUp={this.changeEventImage} type="text" placeholder="image link"/><br/>
+            <input onKeyUp={this.changeEventDescription} type="textarea" placeholder="Description"/><br/>
 
-            <input type="submit" value="ADD EVENT"/>
+            <input type="submit" value="Add Event"/>
           </form>
         </div>
-        <div className='eventsDiv'>
-          <h2 className="eventsTitle"> List of Events </h2>
+        <div className='list-events'>
+          <h2> List of Events </h2>
           <ul>
             {
               this.state.diary.map(
                 (entry) => {
-                  return <li className= "eventCard" key={entry.id} >
-                  <div className='left'>
-                    <img className= "img"  src={entry.image} alt={entry.title}/>
-                  </div>
-                  <div className='right'>
+                  return <li className="nav"key={entry.id}>
+                  <img className= "img"  src={entry.image} alt={entry.title}/>
+                  <div>
                     <div>
-                      <div className='eventTitle'><h3>{entry.title}</h3><h4 className='date'>{entry.date}</h4></div>
-                      <h4 className='descTitle'>Description:</h4>
-                      <p className='description'>{entry.description}</p>
+                      <h5>Title: {entry.title}</h5>
+                      <h5>Date: {entry.date}</h5>
+                      <h5>Description: {entry.description}</h5>
                     </div>
                     <details>
-                    <summary>EDIT EVENT</summary>
+                    <summary>Edit Event</summary>
                       <form id={entry.id} onSubmit={this.updatePost}>
                          <input onKeyUp={this.changeUpdateTitle} type="text" placeholder="New Title"/>
                          <br/>
@@ -149,12 +147,12 @@ class App extends React.Component {
                          <br/>
                          <input onKeyUp={this.changeUpdateDescription} type="textarea" placeholder="Description"/>
                          <br/>
-                        <input type="submit" value="UPDATE ENTRY"/>
+                        <input type="submit" value="Update Entry"/>
                       </form>
-                      <br/>
-                      <button value={entry.id} onClick={this.deletePost}>DELETE EVENT</button>
                     </details>
                   </div>
+                  <br/>
+                  <button value={entry.id} onClick={this.deletePost}>Delete Entry</button>
                   </li>
                 }
               )
