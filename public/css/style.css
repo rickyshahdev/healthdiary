@@ -119,7 +119,7 @@ summary:hover{
 }
 
 .newEvent{
-  width: 300px;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -244,4 +244,11 @@ summary:hover{
   background-size: 100vw 300px;
   background-repeat: no-repeat;
   margin-bottom: 2%;
+}
+.signIn{
+  margin-left: 36%;
+  margin-top: -80px;
+}
+.signin-form{
+  color: white;
 }

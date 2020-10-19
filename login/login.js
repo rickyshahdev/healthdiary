@@ -14,8 +14,8 @@ class Login extends React.Component{
 
 render = () => {
   return(
-    <div>
-    <form action="/index.html" onSubmit={this.getPeople} method="POST">
+    <div >
+    <form className="signin-form" action="/" onSubmit={this.getPeople} method="POST">
       <input  required={true}type="text" placeholder="username"/><br/>
       <input required={true} type="text" placeholder="password"/><br/>
       <input type="submit" value="Sign In"/>

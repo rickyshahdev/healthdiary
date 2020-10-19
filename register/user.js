@@ -33,7 +33,7 @@ class User extends React.Component {
      return <div>
 
        <h2>Please Sign up</h2>
-     <form action="/login/signin.html" method="POST"onSubmit={this.createUser}>
+     <form className="signin-form"action="/login/signin.html" method="POST"onSubmit={this.createUser}>
          <input onKeyUp={this.changeNewUserName} type="text" required={true} placeholder="username"/><br/>
          <input onKeyUp={this.changeNewPassword}type="text" required={true} placeholder="password"/><br/>
          <input type="submit" value="Sign up"/>
