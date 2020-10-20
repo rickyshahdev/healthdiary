@@ -114,10 +114,10 @@ class App extends React.Component {
         <div className='newEvent'>
           <h2 className='newEventTitle'>Add Event</h2>
           <form onSubmit={this.createEvent}>
-            <input onKeyUp={this.changeEventTitle} type="text" placeholder="Title"/><br/>
-            <input onKeyUp={this.changeEventDate} type="date"/><br/>
-            <input onKeyUp={this.changeEventImage} type="text" placeholder="Image Link"/><br/>
-            <textarea onKeyUp={this.changeEventDescription}  placeholder="Description"/><br/>
+            <input onChange={this.changeEventTitle} type="text" placeholder="Title"/><br/>
+            <input onChange={this.changeEventDate} type="date"/><br/>
+            <input onChange={this.changeEventImage} type="text" placeholder="Image Link"/><br/>
+            <textarea onChange={this.changeEventDescription}  placeholder="Description"/><br/>
 
             <input type="submit" value="ADD EVENT"/>
           </form>
@@ -141,13 +141,13 @@ class App extends React.Component {
                     <details>
                     <summary>EDIT EVENT</summary>
                       <form id={entry.id} onSubmit={this.updatePost}>
-                         <input onKeyUp={this.changeUpdateTitle} type="text" placeholder="New Title"/>
+                         <input onChange={this.changeUpdateTitle} type="text" placeholder="New Title"/>
                          <br/>
-                         <input onKeyUp={this.changeUpdateDate} type="date"/>
+                         <input onChange={this.changeUpdateDate} type="date"/>
                          <br/>
-                         <input onKeyUp={this.changeUpdateImage} type='text'/>
+                         <input onChange={this.changeUpdateImage} type='text'/>
                          <br/>
-                         <input onKeyUp={this.changeUpdateDescription} type="textarea" placeholder="Description"/>
+                         <input onChange={this.changeUpdateDescription} type="textarea" placeholder="Description"/>
                          <br/>
                         <input type="submit" value="UPDATE ENTRY"/>
                       </form>
